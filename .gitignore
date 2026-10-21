@@ -1,0 +1,11 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
+
+# Dependências / ambiente (caso venham a existir)
+node_modules
+.env
+.env.local
