@@ -16,7 +16,33 @@
 <meta property="og:title" content="Novos lançamentos Concreart: Régua de Concreto e Piso Drenante" />
 <meta property="og:description" content="Alta tecnologia em concreto. Fabricação própria e entrega em todo o estado de São Paulo." />
 <meta property="og:locale" content="pt_BR" />
-<!-- [IMAGEM: og:image 1200x630 -> assets/og-concreart.jpg] -->
+<meta property="og:url" content="https://lp.concreart.com.br/" />
+<meta property="og:image" content="https://lp.concreart.com.br/assets/og-concreart.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://lp.concreart.com.br/" />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/favicon.png" />
+<meta name="theme-color" content="#0B1620" />
+
+<!-- ============================================================= -->
+<!-- RASTREAMENTO: preencha os IDs em TRACKING. Vazio = não carrega -->
+<!-- ============================================================= -->
+<script>
+var TRACKING = {
+  gtm:   "",   // ex.: "GTM-XXXXXXX" (recomendado: GA4 e Google Ads configurados dentro do GTM)
+  pixel: ""    // ex.: "123456789012345" (Meta Pixel)
+};
+window.dataLayer = window.dataLayer || [];
+if (TRACKING.gtm) {
+  (function(w,d,s,l,i){w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',TRACKING.gtm);
+}
+if (TRACKING.pixel) {
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', TRACKING.pixel); fbq('track', 'PageView');
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,9 +58,12 @@
   "description": "Fábrica de concreto de alto padrão com mais de 30 anos de mercado. Pioneira em molduras de concreto leve na região de Campinas.",
   "telephone": "+551939094999",
   "email": "contato@concreart.com.br",
-  "url": "https://concreart.com.br",
+  "url": "https://lp.concreart.com.br/",
+  "image": "https://lp.concreart.com.br/assets/og-concreart.jpg",
+  "logo": "https://lp.concreart.com.br/assets/favicon.png",
+  "sameAs": ["https://concreart.com.br", "https://www.instagram.com/concreartmolduras/"],
   "areaServed": "São Paulo, Brasil",
-  "address": { "@type": "PostalAddress", "addressRegion": "SP", "addressCountry": "BR" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Hortolândia", "postalCode": "13187-001", "addressRegion": "SP", "addressCountry": "BR" },
   "makesOffer": [
     { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Régua de Concreto" } },
     { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Piso Drenante" } }
@@ -205,6 +234,8 @@ h1,h2,h3,h4 { line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; col
   background: linear-gradient(0deg, rgba(0,0,0,0.5), transparent);
 }
 .img-cover { width: 100%; height: 100%; object-fit: cover; }
+.anchor { position: absolute; top: 0; }
+.anchor, #drenante, section[id] { scroll-margin-top: 90px; }
 
 /* ================================================================= */
 /*  NAV — FLUID ISLAND (glass pill flutuante)                         */
@@ -443,6 +474,10 @@ h1,h2,h3,h4 { line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; col
 .form-shell .btn { width: 100%; justify-content: center; margin-top: 8px; }
 .form-hint { font-size: 0.8rem; color: var(--tx-soft); text-align: center; margin-top: 15px; font-weight: 300; }
 .req { color: var(--gold); }
+.form-row .err { display: none; font-size: 0.8rem; color: #F2A38C; margin-top: 7px; }
+.form-row.invalid input, .form-row.invalid select, .form-row .invalid input, .form-row .invalid select { border-color: #E07A5F; }
+.form-row.invalid > .err, .form-row .invalid > .err { display: block; }
+.form-privacy { font-size: 0.74rem; color: var(--tx-soft); text-align: center; margin-top: 8px; opacity: .8; font-weight: 300; }
 
 /* ================================================================= */
 /*  RODAPÉ                                                            */
@@ -557,8 +592,8 @@ h1,h2,h3,h4 { line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; col
 <section class="hero">
   <div class="hero-bg">
     <!-- Crossfade: uma foto de cada produto -->
-    <img src="assets/img/hero-1.jpg" alt="Fachada revestida com Régua de Concreto Concreart" />
-    <img src="assets/img/hero-2.jpg" alt="Área de piscina com Piso Drenante Concreart" />
+    <img src="assets/img/hero-1.jpg" fetchpriority="high" alt="Fachada revestida com Régua de Concreto Concreart" />
+    <img src="assets/img/hero-2.jpg" decoding="async" alt="Área de piscina com Piso Drenante Concreart" />
   </div>
   <div class="container hero-inner">
     <p class="hero-slogan reveal">Transformamos <b>concreto</b> em <b>arquitetura</b></p>
@@ -580,12 +615,13 @@ h1,h2,h3,h4 { line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; col
 <!--  PRODUTO 1 — RÉGUA DE CONCRETO                                 -->
 <!-- ============================================================= -->
 <section class="product" id="produtos">
+  <span id="regua" class="anchor"></span>
   <div class="container product-grid">
     <div class="product-visual reveal">
       <div class="shell">
         <div class="core">
           <span class="product-index">Lançamento 01</span>
-          <img class="img-cover" src="assets/img/produto-regua.jpg" alt="Réguas de concreto Concreart empilhadas, acabamento uniforme" />
+          <img class="img-cover" loading="lazy" src="assets/img/produto-regua.jpg" alt="Réguas de concreto Concreart empilhadas, acabamento uniforme" />
         </div>
       </div>
     </div>
@@ -622,13 +658,13 @@ h1,h2,h3,h4 { line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; col
 <!-- ============================================================= -->
 <!--  PRODUTO 2 — PISO DRENANTE (espelhado)                         -->
 <!-- ============================================================= -->
-<section class="product mirror">
+<section class="product mirror" id="drenante">
   <div class="container product-grid">
     <div class="product-visual reveal">
       <div class="shell">
         <div class="core">
           <span class="product-index">Lançamento 02</span>
-          <img class="img-cover" src="assets/img/produto-drenante.jpg" alt="Água drenando pelo Piso Drenante Concreart" />
+          <img class="img-cover" loading="lazy" src="assets/img/produto-drenante.jpg" alt="Água drenando pelo Piso Drenante Concreart" />
         </div>
       </div>
     </div>
@@ -766,7 +802,7 @@ h1,h2,h3,h4 { line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; col
           <div class="lbl">Fale conosco</div>
           <a href="#" data-wpp="Olá! Vim pela página de lançamentos do site da Concreart e gostaria de consultar a entrega para a minha cidade e pedir um orçamento.">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 6.3A7.9 7.9 0 0 0 12 4a7.9 7.9 0 0 0-6.8 11.9L4 20l4.2-1.1A7.9 7.9 0 0 0 12 20a7.9 7.9 0 0 0 5.6-13.7ZM12 18.5a6.5 6.5 0 0 1-3.3-.9l-.24-.14-2.5.66.67-2.43-.16-.25A6.5 6.5 0 1 1 12 18.5Z"/></svg>
-            19 3909-4999
+            <span class="wpp-num">19 3909-4999</span>
           </a>
         </div>
       </div>
@@ -824,23 +860,23 @@ h1,h2,h3,h4 { line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; col
     </div>
     <div class="faq-wrap reveal d1">
       <div class="faq-item"><div class="core">
-        <button class="faq-q">Como funciona o orçamento e o preço? <span class="plus"></span></button>
+        <button class="faq-q" aria-expanded="false">Como funciona o orçamento e o preço? <span class="plus"></span></button>
         <div class="faq-a"><p>O orçamento é feito sob medida conforme o produto e a quantidade (m² ou peças). Fale no WhatsApp ou preencha o formulário e retornamos com valor e condições.</p></div>
       </div></div>
       <div class="faq-item"><div class="core">
-        <button class="faq-q">Qual é o prazo de entrega? <span class="plus"></span></button>
+        <button class="faq-q" aria-expanded="false">Qual é o prazo de entrega? <span class="plus"></span></button>
         <div class="faq-a"><p>O frete e o prazo de entrega são informados sob consulta, pois variam bastante conforme a cidade de destino e a quantidade. Confirmamos os dois no momento do orçamento.</p></div>
       </div></div>
       <div class="faq-item"><div class="core">
-        <button class="faq-q">Vocês entregam em toda a região? <span class="plus"></span></button>
+        <button class="faq-q" aria-expanded="false">Vocês entregam em toda a região? <span class="plus"></span></button>
         <div class="faq-a"><p>Sim. Nossa fábrica fica em Hortolândia, na região de Campinas, e entregamos em todo o estado de São Paulo. O frete é calculado conforme a cidade de destino.</p></div>
       </div></div>
       <div class="faq-item"><div class="core">
-        <button class="faq-q">Quais medidas estão disponíveis? <span class="plus"></span></button>
+        <button class="faq-q" aria-expanded="false">Quais medidas estão disponíveis? <span class="plus"></span></button>
         <div class="faq-a"><p>A Régua de Concreto está disponível em 100x12x1,8 cm, 100x9x1,8 cm e 100x15x1,8 cm. O Piso Drenante em 30x30x6 cm. Consulte o quadro de cada produto acima.</p></div>
       </div></div>
       <div class="faq-item"><div class="core">
-        <button class="faq-q">Quais as formas de pagamento? <span class="plus"></span></button>
+        <button class="faq-q" aria-expanded="false">Quais as formas de pagamento? <span class="plus"></span></button>
         <div class="faq-a"><p>Aceitamos Pix, boleto e cartão de crédito. As condições são confirmadas no momento do orçamento.</p></div>
       </div></div>
     </div>
@@ -857,7 +893,7 @@ h1,h2,h3,h4 { line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; col
       <h2 class="h-section">Vamos moldar <span class="em">o seu projeto.</span></h2>
       <p>Preencha os dados e a gente monta um orçamento sob medida. Ao enviar, o WhatsApp abre com a mensagem já preenchida.</p>
       <div class="quote-contacts">
-        <a href="#" data-wpp="Olá! Vim pela página de lançamentos do site da Concreart e quero um orçamento."><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A7.9 7.9 0 0 0 12 4a7.9 7.9 0 0 0-6.8 11.9L4 20l4.2-1.1A7.9 7.9 0 0 0 12 20a7.9 7.9 0 0 0 5.6-13.7ZM12 18.5a6.5 6.5 0 0 1-3.3-.9l-.24-.14-2.5.66.67-2.43-.16-.25A6.5 6.5 0 1 1 12 18.5Z"/></svg></span>WhatsApp: (19) 3909-4999</a>
+        <a href="#" data-wpp="Olá! Vim pela página de lançamentos do site da Concreart e quero um orçamento."><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A7.9 7.9 0 0 0 12 4a7.9 7.9 0 0 0-6.8 11.9L4 20l4.2-1.1A7.9 7.9 0 0 0 12 20a7.9 7.9 0 0 0 5.6-13.7ZM12 18.5a6.5 6.5 0 0 1-3.3-.9l-.24-.14-2.5.66.67-2.43-.16-.25A6.5 6.5 0 1 1 12 18.5Z"/></svg></span>WhatsApp:&nbsp;<span class="wpp-num">(19) 3909-4999</span></a>
         <a href="mailto:contato@concreart.com.br"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>contato@concreart.com.br</a>
       </div>
     </div>
@@ -867,20 +903,44 @@ h1,h2,h3,h4 { line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; col
         <form id="quoteForm" novalidate>
           <div class="form-row">
             <label for="nome">Nome <span class="req">*</span></label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name" required aria-describedby="err-nome" />
+            <span class="err" id="err-nome">Informe seu nome.</span>
           </div>
           <div class="form-row two">
-            <div><label for="whatsapp">WhatsApp <span class="req">*</span></label><input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required /></div>
-            <div><label for="cidade">Cidade / UF <span class="req">*</span></label><input type="text" id="cidade" name="cidade" placeholder="Ex.: Campinas / SP" required /></div>
+            <div><label for="whatsapp">WhatsApp <span class="req">*</span></label><input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" autocomplete="tel" inputmode="tel" required aria-describedby="err-whatsapp" /><span class="err" id="err-whatsapp">Informe um WhatsApp com DDD.</span></div>
+            <div><label for="cidade">Cidade / UF <span class="req">*</span></label><input type="text" id="cidade" name="cidade" placeholder="Ex.: Campinas / SP" autocomplete="address-level2" required aria-describedby="err-cidade" /><span class="err" id="err-cidade">Informe sua cidade.</span></div>
+          </div>
+          <div class="form-row two">
+            <div><label for="perfil">Você é <span class="req">*</span></label>
+              <select id="perfil" name="perfil" required aria-describedby="err-perfil">
+                <option value="" disabled selected>Selecione</option>
+                <option value="Arquiteto(a)">Arquiteto(a)</option>
+                <option value="Construtor(a) / Engenheiro(a)">Construtor(a) / Engenheiro(a)</option>
+                <option value="Dono(a) da obra">Dono(a) da obra</option>
+                <option value="Paisagista">Paisagista</option>
+                <option value="Outro">Outro</option>
+              </select>
+              <span class="err" id="err-perfil">Selecione uma opção.</span>
+            </div>
+            <div><label for="fase">Fase da obra</label>
+              <select id="fase" name="fase">
+                <option value="" selected>Selecione (opcional)</option>
+                <option value="Em projeto">Em projeto</option>
+                <option value="Em construção">Em construção</option>
+                <option value="Reforma">Reforma</option>
+                <option value="Obra pronta">Obra pronta</option>
+              </select>
+            </div>
           </div>
           <div class="form-row two">
             <div><label for="produto">Produto de interesse <span class="req">*</span></label>
-              <select id="produto" name="produto" required>
+              <select id="produto" name="produto" required aria-describedby="err-produto">
                 <option value="" disabled selected>Selecione</option>
                 <option value="Régua de Concreto">Régua de Concreto</option>
                 <option value="Piso Drenante">Piso Drenante</option>
                 <option value="Ambos">Ambos</option>
               </select>
+              <span class="err" id="err-produto">Selecione o produto.</span>
             </div>
             <div><label for="quantidade">Quantidade estimada</label><input type="text" id="quantidade" name="quantidade" placeholder="Ex.: 50 m² ou 120 peças" /></div>
           </div>
@@ -889,6 +949,7 @@ h1,h2,h3,h4 { line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; col
             <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 6.3A7.9 7.9 0 0 0 12 4a7.9 7.9 0 0 0-6.8 11.9L4 20l4.2-1.1A7.9 7.9 0 0 0 12 20a7.9 7.9 0 0 0 5.6-13.7ZM12 18.5a6.5 6.5 0 0 1-3.3-.9l-.24-.14-2.5.66.67-2.43-.16-.25A6.5 6.5 0 1 1 12 18.5Z"/></svg></span>
           </button>
           <p class="form-hint">Ao enviar, você será direcionado ao nosso WhatsApp com os dados já preenchidos.</p>
+          <p class="form-privacy">Seus dados são usados apenas para responder ao seu orçamento.</p>
         </form>
       </div>
     </div>
@@ -909,7 +970,7 @@ h1,h2,h3,h4 { line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; col
       <div>
         <h4>Contato</h4>
         <ul>
-          <li class="footer-ci"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A7.9 7.9 0 0 0 12 4a7.9 7.9 0 0 0-6.8 11.9L4 20l4.2-1.1A7.9 7.9 0 0 0 12 20a7.9 7.9 0 0 0 5.6-13.7ZM12 18.5a6.5 6.5 0 0 1-3.3-.9l-.24-.14-2.5.66.67-2.43-.16-.25A6.5 6.5 0 1 1 12 18.5Z"/></svg><a href="#" data-wpp="Olá! Vim pela página de lançamentos do site da Concreart e quero um orçamento.">WhatsApp: (19) 3909-4999</a></li>
+          <li class="footer-ci"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A7.9 7.9 0 0 0 12 4a7.9 7.9 0 0 0-6.8 11.9L4 20l4.2-1.1A7.9 7.9 0 0 0 12 20a7.9 7.9 0 0 0 5.6-13.7ZM12 18.5a6.5 6.5 0 0 1-3.3-.9l-.24-.14-2.5.66.67-2.43-.16-.25A6.5 6.5 0 1 1 12 18.5Z"/></svg><a href="#" data-wpp="Olá! Vim pela página de lançamentos do site da Concreart e quero um orçamento.">WhatsApp:&nbsp;<span class="wpp-num">(19) 3909-4999</span></a></li>
           <li class="footer-ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg><a href="mailto:contato@concreart.com.br">contato@concreart.com.br</a></li>
           <li class="footer-ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg><a href="[LINK: Instagram]" target="_blank" rel="noopener" id="igFooter">@concreartmolduras</a></li>
         </ul>
@@ -941,7 +1002,8 @@ h1,h2,h3,h4 { line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; col
 <script>
 /* CONFIGURAÇÃO EDITÁVEL */
 const CONFIG = {
-  whatsapp: "551939094999",               // oficial: 55 + 19 + 3909-4999
+  whatsapp: "551939094999",               // CONFIRMAR: o briefing cita (11) 98900-0220 para o produto novo
+  whatsappLabel: "(19) 3909-4999",        // número exibido na página (trocar junto com o de cima)
   email: "contato@concreart.com.br",
   instagram: "https://www.instagram.com/concreartmolduras/", // oficial
   site: "https://concreart.com.br",
@@ -949,23 +1011,65 @@ const CONFIG = {
 document.getElementById("igFooter").href = CONFIG.instagram;
 // todos os links do feed da galeria apontam ao Instagram
 document.querySelectorAll('a[href="[LINK: Instagram]"]').forEach(function(a){ a.href = CONFIG.instagram; });
+document.querySelectorAll(".wpp-num").forEach(function(el){ el.textContent = CONFIG.whatsappLabel; });
 document.getElementById("year").textContent = new Date().getFullYear();
-function wppURL(m){ return "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(m); }
 
-document.querySelectorAll("[data-wpp]").forEach(function(el){ el.addEventListener("click", function(e){ e.preventDefault(); window.open(wppURL(el.getAttribute("data-wpp")), "_blank"); }); });
-document.querySelectorAll("[data-produto]").forEach(function(el){ el.addEventListener("click", function(){ var s=document.getElementById("produto"); if(s) s.value=el.getAttribute("data-produto"); }); });
+/* Origem do lead: guarda utm/gclid/fbclid da primeira visita da sessão */
+var ORIGEM = (function(){
+  var k="concreart_origem", q=new URLSearchParams(location.search), o=null;
+  try { o = JSON.parse(sessionStorage.getItem(k) || "null"); } catch(e) {}
+  if (!o) {
+    o = {
+      fonte: q.get("utm_source") || (q.get("gclid") ? "google" : q.get("fbclid") ? "meta" : (document.referrer ? new URL(document.referrer).hostname.replace(/^www\./,"") : "direto")),
+      campanha: q.get("utm_campaign") || ""
+    };
+    try { sessionStorage.setItem(k, JSON.stringify(o)); } catch(e) {}
+  }
+  return o;
+})();
+function refTag(){ return "\n\n_Ref: " + ORIGEM.fonte + (ORIGEM.campanha ? " · " + ORIGEM.campanha : "") + "_"; }
+
+/* Eventos de conversão (só disparam se GTM/Pixel estiverem configurados) */
+function track(evento, dados){
+  window.dataLayer.push(Object.assign({ event: evento, origem: ORIGEM.fonte, campanha: ORIGEM.campanha }, dados || {}));
+  if (window.fbq) fbq("track", evento === "lead_formulario" ? "Lead" : "Contact", dados || {});
+}
+
+function wppURL(m){ return "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(m.trim() + refTag()); }
+// abre em nova aba; se o navegador bloquear (comum no celular), abre na mesma aba
+function abrirWpp(m){ var w = window.open(wppURL(m), "_blank"); if (!w) location.href = wppURL(m); }
+
+document.querySelectorAll("[data-wpp]").forEach(function(el){ el.addEventListener("click", function(e){ e.preventDefault(); track("clique_whatsapp", { local: el.className || "link" }); abrirWpp(el.getAttribute("data-wpp")); }); });
+function setProduto(v){ var s=document.getElementById("produto"); if(s) s.value=v; }
+document.querySelectorAll("[data-produto]").forEach(function(el){ el.addEventListener("click", function(){ setProduto(el.getAttribute("data-produto")); }); });
+// anúncio com link para #drenante ou #regua já deixa o produto selecionado
+if (location.hash === "#drenante") setProduto("Piso Drenante");
+if (location.hash === "#regua") setProduto("Régua de Concreto");
 
 document.getElementById("quoteForm").addEventListener("submit", function(e){
   e.preventDefault();
-  var f=e.target;
+  var f=e.target, primeiroErro=null;
+  ["nome","whatsapp","cidade","perfil","produto"].forEach(function(id){
+    var el=f[id], v=el.value.trim();
+    var ok = id==="whatsapp" ? v.replace(/\D/g,"").length >= 10 : !!v;
+    var box = el.parentNode;
+    box.classList.toggle("invalid", !ok);
+    el.setAttribute("aria-invalid", ok ? "false" : "true");
+    if (!ok && !primeiroErro) primeiroErro = el;
+  });
+  if (primeiroErro) { primeiroErro.focus(); return; }
   var nome=f.nome.value.trim(), whats=f.whatsapp.value.trim(), cidade=f.cidade.value.trim();
-  var produto=f.produto.value, qtd=f.quantidade.value.trim(), msg=f.mensagem.value.trim();
-  if(!nome||!whats||!cidade||!produto){ alert("Por favor, preencha nome, WhatsApp, cidade e produto de interesse."); return; }
-  var t="Olá, Concreart! Vim pela página de lançamentos do site e gostaria de um orçamento.\n\n*Nome:* "+nome+"\n*WhatsApp:* "+whats+"\n*Cidade/UF:* "+cidade+"\n*Produto:* "+produto+"\n";
+  var perfil=f.perfil.value, fase=f.fase.value, produto=f.produto.value, qtd=f.quantidade.value.trim(), msg=f.mensagem.value.trim();
+  var t="Olá, Concreart! Vim pela página de lançamentos do site e gostaria de um orçamento.\n\n*Nome:* "+nome+"\n*WhatsApp:* "+whats+"\n*Cidade/UF:* "+cidade+"\n*Perfil:* "+perfil+"\n";
+  if(fase) t+="*Fase da obra:* "+fase+"\n";
+  t+="*Produto:* "+produto+"\n";
   if(qtd) t+="*Quantidade estimada:* "+qtd+"\n";
   if(msg) t+="*Mensagem:* "+msg+"\n";
-  window.open(wppURL(t), "_blank");
+  track("lead_formulario", { produto: produto, perfil: perfil, fase: fase });
+  abrirWpp(t);
 });
+// some o erro assim que a pessoa corrige o campo
+document.getElementById("quoteForm").addEventListener("input", function(e){ var b=e.target.parentNode; if (b.classList.contains("invalid")) { b.classList.remove("invalid"); e.target.setAttribute("aria-invalid","false"); } });
 
 /* Nav scrolled */
 var navWrap=document.getElementById("navWrap");
@@ -981,8 +1085,8 @@ menu.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", func
 document.querySelectorAll(".faq-q").forEach(function(q){
   q.addEventListener("click", function(){
     var item=q.closest(".faq-item"), ans=q.nextElementSibling, isOpen=item.classList.contains("open");
-    document.querySelectorAll(".faq-item").forEach(function(i){ i.classList.remove("open"); i.querySelector(".faq-a").style.maxHeight=null; });
-    if(!isOpen){ item.classList.add("open"); ans.style.maxHeight=ans.scrollHeight+"px"; }
+    document.querySelectorAll(".faq-item").forEach(function(i){ i.classList.remove("open"); i.querySelector(".faq-a").style.maxHeight=null; i.querySelector(".faq-q").setAttribute("aria-expanded","false"); });
+    if(!isOpen){ item.classList.add("open"); ans.style.maxHeight=ans.scrollHeight+"px"; q.setAttribute("aria-expanded","true"); }
   });
 });
 
