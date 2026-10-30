@@ -12,6 +12,7 @@
 <meta name="keywords" content="régua de concreto, piso drenante, concreto Campinas, piso permeável SP, régua de concreto alto padrão, concreto Campinas SP" />
 <meta name="author" content="Concreart" />
 <meta name="robots" content="index, follow" />
+<meta name="google-site-verification" content="XO0AVmEieYlIHv3r0bvbkbsTT6RuCmYLzi-LGDThW4s" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Novos lançamentos Concreart: Régua de Concreto e Piso Drenante" />
 <meta property="og:description" content="Alta tecnologia em concreto. Fabricação própria e entrega em todo o estado de São Paulo." />
@@ -1007,6 +1008,7 @@ const CONFIG = {
   email: "contato@concreart.com.br",
   instagram: "https://www.instagram.com/concreartmolduras/", // oficial
   site: "https://concreart.com.br",
+  planilha: "https://script.google.com/macros/s/AKfycbwgO_z1kce9WjbFUbIH1t9kNjL3SeirToJ-p3WdFErP4EHQwwIq17iBlgYLpTZhbqjXVQ/exec",                         // URL /exec do Apps Script: grava cada orçamento na aba "Orçamentos". Vazio = não grava
 };
 document.getElementById("igFooter").href = CONFIG.instagram;
 // todos os links do feed da galeria apontam ao Instagram
@@ -1065,6 +1067,8 @@ document.getElementById("quoteForm").addEventListener("submit", function(e){
   t+="*Produto:* "+produto+"\n";
   if(qtd) t+="*Quantidade estimada:* "+qtd+"\n";
   if(msg) t+="*Mensagem:* "+msg+"\n";
+  // sendBeacon chega mesmo se o WhatsApp abrir na mesma aba (celular)
+  if (CONFIG.planilha) navigator.sendBeacon(CONFIG.planilha, new URLSearchParams({ nome: nome, whatsapp: whats, cidade: cidade, perfil: perfil, fase: fase, produto: produto, quantidade: qtd, mensagem: msg, origem: ORIGEM.fonte, campanha: ORIGEM.campanha }));
   track("lead_formulario", { produto: produto, perfil: perfil, fase: fase });
   abrirWpp(t);
 });
